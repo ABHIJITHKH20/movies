@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Successful</title>
+    <link rel="stylesheet" href="{% static 'css/payment_success.css' %}">
+</head>
+<body>
+    <div class="success-container">
+        <h1>🎉 Payment Successful!</h1>
+        <!-- <p>Thank you, {{ request.user.username }}!</p> -->
+        <p><strong>Movie:</strong> {{ movie.title }}</p>
+        <p><strong>Seats:</strong> {{ booking.seats }}</p>
+        <p><strong>Total Paid:</strong> ${{ total_price|floatformat:2 }}</p>
+
+        <div class="btn-group">
+            <a href="{% url 'home' %}" class="btn">Return to Homepage</a>
+            <a href="{% url 'vox_list' %}" class="btn">Book Another Ticket</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

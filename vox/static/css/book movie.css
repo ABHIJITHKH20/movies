@@ -1,0 +1,58 @@
+body {
+    background-color: #212121;
+    color: #ffffff;
+  }
+  .movie-card {
+    background-color: #333333;
+    border: 2px solid #FFB300;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .book-button {
+    background-color: #FFB300;
+    color: #212121;
+    font-weight: bold;
+  }
+  .book-button:hover {
+    background-color: #E53935;
+  }
+  
+
+ .screen {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #444, #333);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+  perspective: 1000px; 
+}
+
+.screen:hover {
+  transform: rotateX(10deg) rotateY(10deg); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

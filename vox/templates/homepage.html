@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Movie Ticket Booking</title>
+   
+  <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+ </head>
+<body>
+ <nav class="w3-bar w3-black">
+    <div class="w3-bar-item">
+      <a class="navbar-brand" href="#">
+          <img src="{% static 'image/vector-movie-ticket-icon.jpg' %}" class="logo" width="50px">
+          DVOX
+      </a>
+  </div>
+  
+ 
+  <a href="#home" class="w3-button w3-bar-item">Home</a>
+  <a href="#movies" class="w3-button w3-bar-item">Movies</a>
+  <a href="#offers" class="w3-button w3-bar-item">Offers</a>
+  <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+  <form action="/search/" method="get" style="display: flex; align-items: center; gap: 8px;">
+  <label for="search-query" class="visually-hidden">Search movies</label>
+  <input 
+    type="text" 
+    id="search-query" 
+    name="query" 
+    placeholder="Search movies..." 
+    style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; flex: 1;"
+    aria-label="Search movies"
+  >
+  <button 
+    type="submit" 
+    style="padding: 8px 12px; border: none; border-radius: 4px; background-color: #007BFF; color: white; cursor: pointer;"
+  >
+    Search
+  </button>
+</form>
+
+
+  
+ 
+   
+
+</nav>
+
+    <img class="mySlides" src="{% static 'image/OIP (1).jpg' %}" style="width:100%; max-width:750px;">
+    <img class="mySlides" src="{% static 'image/OIP.jpg' %}"   style="width:100%; max-width:750px;">
+    <img class="mySlides" src="{% static 'image/nn.jpg' %}"   style="width:100%; max-width:750px; ">
+
+  
+
+<section class="w3-container w3-center w3-content" style="max-width:600px; padding: 20px;">
+  <h2 class="w3-wide" style="font-family: Arial, sans-serif;">Welcome to Your Favorite Movie Theater</h2>
+  <p class="w3-opacity" style="font-size: 18px; font-style: italic;">Book your tickets easily, enjoy movies comfortably!</p>
+  <p class="w3-justify" style="font-size: 16px; line-height: 1.6;">
+    Whether you're looking for the latest blockbusters or classic films, our platform makes booking movie tickets a breeze. 
+    With a wide selection of theaters, showtimes, and secure payment methods, we ensure a hassle-free experience from start to finish. 
+    Explore, book, and enjoy!
+  </p>
+
+  <a href="{% url 'vox_list' %}" class="w3-button w3-blue" style="margin-top: 20px;">Book Tickets Now</a>
+
+
+
+  <p style="font-size: 18px; font-style: italic; color: #28a745;">NOW RUNNING SUCCESSFULLY</p>
+
+
+</section>
+
+
+
+<section class="w3-row-padding w3-center w3-light-grey">
+  <article class="w3-third">
+
+    <p>MARCO</p>
+    <img src="{%static 'image/et00416394-dkbxuzeqel-landscape.avif'  %}" alt="Movie 1" style="width:100%">
+    <p>Marco is a 2024 Indian Malayalam -language neo-noir action thriller film written and directed by Haneef Adeni and produced by Shareef Muhammed under his Cubes Entertainments banner.</p>
+  </article>
+  <article class="w3-third">
+    <p>Empuraan</p>
+    <img src="{% static 'image/maxresdefault.jpg' %}" alt="Movie 2" style="width:100%">
+    <p>L2: Empuraan (stylized as L2 E.M.P.U.R.A.A.N - Lucifer 2), also marketed as L2E, is a 2025 Indian Malayalam-language action thriller film directed by Prithviraj Sukumaran and written by Murali Gopy. It was jointly produced by Antony Perumbavoor, Gokulam Gopalan, and A. Subaskaran through Aashirvad Cinemas, Sree Gokulam Movies, and Lyca Productions, respectively. Lyca Productions sold their rights to Sree Gokulam movies at the last minute. The film is both the prequel of sequel of the 2019 Indian film Lucifer and is the second installment in the L Franchise</p>
+  </article>
+  <article class="w3-third">
+    <p>Aavesham</p>
+    <img src="{% static 'image/avs.jpg' %}" alt="Aavesham Movie Poster">
+    <p>Aavesham follows the lives of three students who move to Bangalore for college, but end up caught in a fight with their seniors. In an attempt to seek revenge, the students befriend Rangan, a local goon and his gang. What happens in the course of this strange friendship forms the crux of the film.</p>
+  </article>
+ 
+</section>
+
+ 
+
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+  <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-google"></a>
+  <a href="#" class="fa fa-instagram"></a>
+ 
+  <p class="w3-medium">© 2025 DVOX | All Rights Reserved</p>
+</footer>
+
+
+<script>
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000); 
+}
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

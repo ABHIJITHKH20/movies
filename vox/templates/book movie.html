@@ -1,0 +1,252 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Seats for {{ movie.title }}</title>
+  <style>
+    .seat-container {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .seat {
+      width: 40px;
+      height: 40px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 40px;
+      position: relative;
+    }
+
+    .seat.selected {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .seat.booked {
+      background-color: #f44336;
+      color: white;
+      pointer-events: none;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Select Seats for {{ movie.title }}</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+  
+    <div class="seat-container">
+      {% for row in "ABCDEFGH" %}
+        {% for col in "12345678" %}
+          {% with seat=row|add:col %}
+            {% if seat in booked_seats %}
+              <div class="seat booked" data-seat="{{ seat }}">{{ seat }}</div>
+              <input type="checkbox" name="seats" value="{{ seat }}" hidden disabled>
+            {% else %}
+              <div class="seat" data-seat="{{ seat }}">{{ seat }}</div>
+              <input type="checkbox" name="seats" value="{{ seat }}" hidden>
+            {% endif %}
+          {% endwith %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    <div style="text-align:center;">
+      <button type="submit" class="submit-btn">Confirm Booking</button>
+    </div>
+  </form>
+
+  <script>
+    const seats = document.querySelectorAll('.seat:not(.booked)');
+    seats.forEach(seat => {
+      seat.addEventListener('click', () => {
+        seat.classList.toggle('selected');
+        const input = seat.nextElementSibling;
+        input.checked = !input.checked;
+      });
+    });
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Seats for {{ movie.title }}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 26px;
+      color: #f1f1f1;
+    }
+
+    /* Realistic screen */
+    .theater-screen-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .theater-screen {
+      width: 80%;
+      max-width: 500px;
+      height: 50px;
+      background: radial-gradient(ellipse at center, #ddd 0%, #999 100%);
+      border-top-left-radius: 150px;
+      border-top-right-radius: 150px;
+      text-align: center;
+      line-height: 50px;
+      font-weight: bold;
+      color: #333;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4) inset;
+      transform: scaleY(0.8);
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .seat-container {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 0 10px;
+    }
+
+    .seat {
+      width: 40px;
+      height: 40px;
+      background-color: #ccc;
+      border: 1px solid #888;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      color: black;
+      transition: background-color 0.3s ease;
+    }
+
+    .seat:hover:not(.booked) {
+      background-color: #bbb;
+    }
+
+    .seat.selected {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .seat.booked {
+      background-color: #e53935;
+      color: white;
+      pointer-events: none;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #1976D2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select Seats for {{ movie.title }}</h2>
+
+  <!-- Realistic curved screen -->
+  <div class="theater-screen-wrapper">
+    <div class="theater-screen">SCREEN</div>
+  </div>
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="seat-container">
+      {% for row in "ABCDEFGH" %}
+        {% for col in "12345678" %}
+          {% with seat=row|add:col %}
+            {% if seat in booked_seats %}
+              <div class="seat booked" data-seat="{{ seat }}">{{ seat }}</div>
+              <input type="checkbox" name="seats" value="{{ seat }}" hidden disabled>
+            {% else %}
+              <div class="seat" data-seat="{{ seat }}">{{ seat }}</div>
+              <input type="checkbox" name="seats" value="{{ seat }}" hidden>
+            {% endif %}
+          {% endwith %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    <button type="submit" class="submit-btn">Confirm Booking</button>
+  </form>
+
+  <script>
+    const seats = document.querySelectorAll('.seat:not(.booked)');
+    seats.forEach(seat => {
+      seat.addEventListener('click', () => {
+        seat.classList.toggle('selected');
+        const input = seat.nextElementSibling;
+        input.checked = !input.checked;
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Available Vox Movies</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <h2>🎬 Available DVox Movies</h2>
+    <div class="movie-grid">
+      {% for vox in vox_movies %}
+        <label class="movie-card">
+          <input type="checkbox" class="flip-toggle" id="flip-{{ vox.id }}" />
+
+          <div class="card-inner">
+            <!-- Front Side -->
+            <div class="card-front">
+              {% if vox.image %}
+                <img src="{{ vox.image.url }}" alt="{{ vox.title }}">
+              {% else %}
+                <img src="{% static 'image/default-poster.jpg' %}" alt="Default poster">
+              {% endif %}
+              <h3>{{ vox.title }}</h3>
+              <p class="click-hint">Click for details</p>
+            </div>
+
+            <div class="card-back">
+              <h3>{{ vox.title }}</h3>
+              <p><strong>🎭 Genre:</strong> {{ vox.genre }}</p>
+              <p><strong>🗣 Language:</strong> {{ vox.language }}</p>
+              <p><strong>⏱ Duration:</strong> {{ vox.duration }} mins</p>
+              <p><strong>📅 Release Date:</strong> {{ vox.release_date }}</p>
+              <p><strong>⏰ Showtime:</strong> {{ vox.showtime }}</p>
+              <p><strong>🎬screen:</strong> {{vox.screen }}</p>
+              <a href="{% url 'book_movie' vox.id %}" class="book-button">Book Now</a>
+              <span class="click-hint">Click to go back</span>
+            </div>
+          </div>
+        </label>
+      {% empty %}
+        <p class="empty-message">No movies available at the moment.</p>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

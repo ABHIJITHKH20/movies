@@ -1,0 +1,16 @@
+li {
+    background-color: white;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures the content doesn't spill over the image */
+}
+
+img {
+    max-width: 100px;
+    max-height: 150px;
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 10px;  /* Adds space below image */
+}

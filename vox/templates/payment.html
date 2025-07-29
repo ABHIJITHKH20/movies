@@ -1,0 +1,55 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Movie Booking</title>
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment Information</h2>
+
+        <form method="post" action="{% url 'process_payment' %}">
+            {% csrf_token %}
+                 <input type="hidden" name="movie_id" value="{{ movie.id }}">
+            <input type="hidden" name="seats" value="{{ seats }}">
+            
+            <div class="input-group">
+                <label for="name">Cardholder Name</label>
+                <input type="text" id="name" name="cardholder_name" placeholder="Full Name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="card_number">Card Number</label>
+                <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9101 1121" required>
+            </div>
+
+            <div class="input-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </div>
+
+            <div class="input-group">
+                <label for="billing_address">Billing Address</label>
+                <input type="text" id="billing_address" name="billing_address" placeholder="123 Main St, City, Country" required>
+            </div>
+
+            <button type="submit" class="btn">Proceed to Payment</button>
+        </form>
+        
+        <div class="payment-summary">
+            <h3>Order Summary</h3>
+            <p><strong>Movie:</strong> {{ movie.title }}</p>
+            <p><strong>Screen:</strong> {{ movie.screen }}</p>
+            <!-- <p><strong>Total Amount:</strong> ${{ movie.price }}</p> -->
+            <p>Price per ticket: ${{ movie.price }}</p>
+            <p><strong>Total: ${{ total_price }}</strong></p>
+          
+        </div>
+            
+    </div>
+</body>
+</html>

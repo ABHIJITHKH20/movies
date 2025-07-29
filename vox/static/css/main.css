@@ -1,0 +1,437 @@
+/* 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+h2 {
+  text-align: center;
+  color: gold;
+  margin-top: 30px;
+  font-size: 2.5rem;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+
+.movie-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+  transition: transform 0.3s;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-front,
+.card-back {
+  padding: 20px;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+}
+
+.card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+}
+
+.card-front img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card-front h3 {
+  font-size: 1.2rem;
+  color: #ffd700;
+  margin: 10px 0;
+}
+
+
+.book-button {
+  background-color: gold;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.book-button:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+
+.card-back {
+  background-color: #2a2a2a;
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.movie-card:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.movie-card:hover .card-back {
+  transform: rotateY(0);
+  z-index: 1;
+}
+
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  margin-top: 50px;
+}
+
+
+
+
+
+
+.movie-card {
+  perspective: 1000px;
+}
+
+
+
+
+
+
+
+.book-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ff4c4c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.book-button:hover {
+  background-color: #d90000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+h2 {
+  text-align: center;
+  color: gold;
+  margin-top: 30px;
+  font-size: 2.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.movie-card {
+  position: relative;
+  width: 280px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.flip-toggle {
+  display: none;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.flip-toggle:checked + .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.card-front {
+  background-color: #1e1e1e;
+  z-index: 2;
+}
+
+.card-front img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card-front h3 {
+  color: gold;
+  margin: 10px 0;
+}
+
+.card-back {
+  background-color: #2a2a2a;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.book-button {
+  background-color: gold;
+  color: black;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 3;
+  position: relative;
+}
+
+.flip-overlay {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  margin-top: 50px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(120deg, #0d0d0d, #1c1c1c);
+  color: #f2f2f2;
+}
+
+h2 {
+  text-align: center;
+  color: #ffcc00;
+  margin: 40px 0 20px;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px;
+}
+
+.movie-card {
+  width: 300px;
+  height: 480px;
+  perspective: 1200px;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.flip-toggle {
+  display: none;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  border-radius: 16px;
+}
+
+.flip-toggle:checked + .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e1e1e;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card-front img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.card-front h3 {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+  color: #f8f8f8;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.card-back h3 {
+  color: #ffcc00;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-back p {
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: #ccc;
+}
+
+.book-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.book-button:hover {
+  background: linear-gradient(to right, #ffe066, #ffaa00);
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.8);
+}
+
+.click-hint {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 5px;
+}
